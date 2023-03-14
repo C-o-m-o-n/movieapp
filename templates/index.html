@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+<body>
+  {% block content %}
+  
+  <form action="{{ url_for('index')}}" method="POST">
+  <div class="mb-3">
+  <div class="mb-3 form-check">
+    <input type="text" name="search" id="exampleCheck1">
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+    {% for movie in movies.Search %}
+  <div class=" container mb-3">
+ <div class="card">
+  <div class="card-body">
+    <p class="card-text">{{ movie.Year }}</p>
+    <img class="author" src="{{ movie.Poster }}">
+    <a href="https://google.com/search?q=?intitle+:+index.of?mp4+{{movie_search}}"><h5 class="card-title">{{ movie.Title }}</h5></a>
+    
+</div>
+</div>
+</div>
+  {% endfor %}
+{% endblock content %}
+</body>
